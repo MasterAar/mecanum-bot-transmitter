@@ -3,7 +3,7 @@
 import socket
 import time
 import random
-
+# int(time.time())
 UDP_TX_IP = "192.168.0.17"  # The recieving end's IP (the Pi Zero W)
 UDP_RX_IP = "192.168.0.40"  # This device's IP (the Lenovo)
 UDP_PORT = 4536  # Why not
