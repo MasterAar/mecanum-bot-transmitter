@@ -2,7 +2,7 @@
 
 import socket
 import time
-import random
+import pigpio
 
 UDP_TX_IP = "192.168.0.40"  # The recieving end's IP (the Lenovo)
 UDP_RX_IP = "192.168.0.17"  # This device's IP (the Pi Zero W)
