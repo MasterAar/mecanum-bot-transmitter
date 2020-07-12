@@ -10,7 +10,7 @@ INFO:
     Code to run on the PC is here (main.py), while the code to run on the
     Pi is also kept in this repository (pi-main.py). The Arduino code is
     within the typical Arduino-file-folder (attiny_85_battery_code).
-    
+
     The Pi hostname is "mecanum-bot". For a new SD card, install the libaries
     listed in pi-main.py as well as pigpio. Enable SSH, I2C, and Remote GPIO
     through raspi-config, and set the pigpio daemon to launch at boot with
@@ -126,7 +126,7 @@ def get_motor_speeds(motion_values):
 
     # If the previous data has a difference greater than the acceleration constant
     # then the current data is scaled to have a difference equal to the constant
-    
+
     # TODO: this
 
     '''
