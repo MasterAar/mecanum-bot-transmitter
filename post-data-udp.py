@@ -1,6 +1,7 @@
-# Code on Lenovo
+x = "testing"
+y = 3
 
-import pigpio
-
-pi = pigpio.pi('mecanum-bot')
-
+print(x)
+print(y)
+x += str(y)
+print(x)

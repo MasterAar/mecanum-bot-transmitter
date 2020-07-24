@@ -1,9 +1,12 @@
 import math
-import time
 import sys
+import time
+
+from planar import Vec2
 
 import evdev
-from planar import Vec2
+import RPi.GPIO as GPIO
+from pizypwm import *
 
 """
 INFO:
@@ -59,7 +62,7 @@ for device in devices:
     print(device.path, device.name)
     if device.name == "Nintendo Wiimote":
         device_id = max(device_id, int(device.path[-1]))
-
+ 
 if device_id == -1:
     sys.exit("No Wiimote detected as input! Check your Wiimote connection or the initial configuration steps and try again.")
 
@@ -70,23 +73,19 @@ device = evdev.InputDevice(BASE_DEVICE_NAME)
 # Main Loop ------------------------------------------------------------------------------------------------------------
 
 for event in device.read_loop():
-    e_c = event.code
-    e_v = event.value
-    print("E")
+    e_c = event.code  # Joystick: 0 or 1   Button: ecodes values
+    e_t = event.type  # Null: 0   Button: 1   Joystick: 3
+    e_v = event.value  # Pressed: 1   Released: 0   Joystick: 0-255
 
-    # Add motion control stuff here
-    if e_c == 2 and key_log[e_c] == 0:
-        speed_multiplier = LOW_SPEED
-        key_log[e_c] = 1
-    else:
-        key_log[e_c] = 0
-    
-    if e_c == 3 and key_log[e_c] == 0:
-        speed_multiplier = HIGH_SPEED
-        key_log[e_c] = 1
-    else:
-        key_log[e_c] = 0
+    if e_t != 0:
+        print("__________ EVENT DETECTED __________")
+        
+        key_log[e_c] = e_v
 
-    
-
-    key_log[event.code] = event.value  # Update after acting on the event
+        # Add motion control stuff here
+        if e_c == 44 and e_v == 1:
+            speed_multiplier = LOW_SPEED
+        elif e_c == 46 and e_v == 1:
+            speed_multiplier = HIGH_SPEED
+        else:
+            key_log[e_c] = 0
