@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import threading
 import time
 
+
 class PiZyPwm(threading.Thread):
 
   def __init__(self, frequency, gpioPin, gpioScheme):

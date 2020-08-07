@@ -1,0 +1,23 @@
+# WiiMote
+Wiimote.A = KEY_A
+Wiimote.B  = KEY_B
+Wiimote.Minus = KEY_3
+Wiimote.Plus = KEY_4
+Wiimote.Home = KEY_H
+Wiimote.1 = KEY_1
+Wiimote.2 = KEY_2
+Wiimote.Up = KEY_UP
+Wiimote.Down = KEY_DOWN
+Wiimote.Left = KEY_LEFT
+Wiimote.Right = KEY_RIGHT
+
+# Nunchuk
+Nunchuk.C = KEY_C
+Nunchuk.Z = KEY_Z
+Nunchuk.Stick.X = ABS_X
+Nunchuk.Stick.Y = ABS_Y
+
+Plugin.led.Led1 = 1
+#Plugin.led.Led2 = 1
+#Plugin.led.Led3 = 1
+Plugin.led.Led4 = 1
