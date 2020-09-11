@@ -1,6 +1,8 @@
 # Mecanum Bot Code
 This is a backup of the code for the Wiimote-controlled mecanum robot. Currently it uses a Pi Zero W and Attiny85 as the main controllers, and has basic features (motion with strafing, battery indication, nunchuk calibration, slow/fast modes, safe shutdown indication, etc.)
 
+**See photos [here](https://photos.app.goo.gl/PudXENaW6ujRSE3S7)**
+
 To use, make sure `mywminput`, `pi-main.py`, `pyzypwm.py` and `connectwiimote.sh` are all in the main (~/) directory. Some elements of the tutorials listed below will be needed to set it up. This README is for re-building the SD card later on as I had to overwrite the current one for a different project.
 
 -https://pimylifeup.com/raspberry-pi-wiimote-controllers/
